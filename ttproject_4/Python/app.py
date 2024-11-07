@@ -30,8 +30,8 @@ as one would suspect, yields a higher price typically
 df_vehicles['price'] = df_vehicles['price'][df_vehicles['price'] < 30000]
 df_vehicles['odometer'] = df_vehicles['odometer'].dropna()
 
-show_hist = st.checkbox("Show Histogram", value=True)
-show_scatterplot = st.checkbox("Show Scatterplot", value=True)
+show_hist = st.checkbox("Show Histogram")
+show_scatterplot = st.checkbox("Show Scatterplot")
 
 if show_hist:
 #Here is the histogram showing the amount of days listed per vehicle type:
