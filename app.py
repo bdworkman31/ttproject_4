@@ -19,8 +19,10 @@ vehicle_duplicates = df_vehicles[df_vehicles.duplicated]
 df_vehicles['model'] = df_vehicles['model'].apply(lambda x: x.split()[0])
 print(df_vehicles['model'])
 
+#Remove outliers from data
 df_vehicles['price'] = df_vehicles['price'][df_vehicles['price'] < 30000]
-df_vehicles['model_year'] = df_vehicles['model_year'][df_vehicles['model_year'] > 1960]
+df_vehicles['model_year'] = df_vehicles['model_year'][df_vehicles['model_year'] > 1980]
+df_vehicles['odometer'] = df_vehicles['odometer'][df_vehicles['odometer'] < 400000]
 
 #Empty dataframe is returned, therefore there are no duplicates
 
