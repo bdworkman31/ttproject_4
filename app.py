@@ -19,6 +19,9 @@ vehicle_duplicates = df_vehicles[df_vehicles.duplicated]
 df_vehicles['model'] = df_vehicles['model'].apply(lambda x: x.split()[0])
 print(df_vehicles['model'])
 
+df_vehicles['price'] = df_vehicles['price'][df_vehicles['price'] < 30000]
+df_vehicles['model_year'] = df_vehicles['model_year'][df_vehicles['model_year'] > 1960]
+
 #Empty dataframe is returned, therefore there are no duplicates
 
 #In the model_year column, we have null values.  Without these values, we cannot accurately assess a cars values, as there are notable differences between years 
@@ -39,7 +42,7 @@ df2 = df_vehicles['model_year'][df_vehicles['model_year'].isna()]
 df3 = df_vehicles['odometer'][df_vehicles['odometer'].isna()]
 df4 = df_vehicles['cylinders'][df_vehicles['cylinders'].isna()]
 
-
+"""  """
 
 show_hist = st.checkbox("Show Histogram")
 show_scatterplot = st.checkbox("Show Scatterplot")
