@@ -23,6 +23,7 @@ print(df_vehicles['model'])
 df_vehicles['price'] = df_vehicles['price'][df_vehicles['price'] < 30000]
 df_vehicles['model_year'] = df_vehicles['model_year'][df_vehicles['model_year'] > 1980]
 df_vehicles['odometer'] = df_vehicles['odometer'][df_vehicles['odometer'] < 400000]
+df_vehicles['days_listed'] = df_vehicles['days_listed'][df_vehicles['days_listed'] < 120]
 
 #Empty dataframe is returned, therefore there are no duplicates
 
